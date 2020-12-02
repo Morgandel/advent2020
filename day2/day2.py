@@ -22,7 +22,17 @@ def countValidPW(pContent):
             validCount += 1
     return validCount
 
+def validCharPosition(pContent):
+    validCount = 0
+    for pw in pContent:
+        pos1 = pw[3][pw[0]-1] == pw[2]
+        pos2 = pw[3][pw[1]-1] == pw[2]
+        if ((not pos1 and pos2) or (pos1 and not pos2)):
+            validCount += 1
+    return validCount
+
 if __name__ == "__main__":
-    content = readToMatrix("input")
-    validPW = countValidPW(content)
+    content = readToMatrix("input.txt")
+    #validPW = countValidPW(content)
+    validPW = validCharPosition(content)    
     print(validPW)
