@@ -8,7 +8,7 @@ def parser(pFileName):
 
 def checkInst(pInst, pAccu, pI, pVisited):
     if pI in pVisited:
-        return (pAccu, pI, pVisited, False)
+        return (pAccu, pI, False)
     pVisited[pI] = True
     if(pInst[0] == "acc"):
         pAccu += pInst[1]
@@ -17,7 +17,7 @@ def checkInst(pInst, pAccu, pI, pVisited):
         pI += pInst[1]
     elif(pInst[0] == "nop"):
         pI += 1
-    return (pAccu, pI, pVisited, True)
+    return (pAccu, pI, True)
 
 
 def part1(pContent):
@@ -26,7 +26,7 @@ def part1(pContent):
     i = 0
     loop = True
     while loop:
-        accu, i, visited, loop = checkInst(pContent[i], accu, i, visited)
+        accu, i, loop = checkInst(pContent[i], accu, i, visited)
     return accu
 
 def invertInst(pContent, pNewInst, pIndex):
@@ -39,7 +39,7 @@ def invertInst(pContent, pNewInst, pIndex):
             inst, value = pContent[i]
             if(i == j):
                 inst = pNewInst
-            accu, i, visited, loop = checkInst((inst, value), accu, i, visited)
+            accu, i, loop = checkInst((inst, value), accu, i, visited)
         if(i >= len(pContent)):
             return (accu, True)
     return (0, False)
