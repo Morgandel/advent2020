@@ -40,7 +40,7 @@
 <p>In this example, after the 5-number preamble, almost every number is the sum of two of the previous 5 numbers; the only number that does not follow this rule is <em><code>127</code></em>.</p>
 <p>The first step of attacking the weakness in the XMAS data is to find the first number in the list (after the preamble) which is <em>not</em> the sum of two of the 25 numbers before it. <em>What is the first number that does not have this property?</em></p>
 </article>
-<p>Your puzzle answer was <code>57195069</code>.</p><article class="day-desc"><h2 id="part2">--- Part Two ---</h2><p>The final step in breaking the XMAS encryption relies on the invalid number you just found: you must <em>find a contiguous set of at least two numbers</em> in your list which sum to the invalid number from step 1.</p>
+<article class="day-desc"><h2 id="part2">--- Part Two ---</h2><p>The final step in breaking the XMAS encryption relies on the invalid number you just found: you must <em>find a contiguous set of at least two numbers</em> in your list which sum to the invalid number from step 1.</p>
 <p>Again consider the above example:</p>
 <pre><code>35
 20
